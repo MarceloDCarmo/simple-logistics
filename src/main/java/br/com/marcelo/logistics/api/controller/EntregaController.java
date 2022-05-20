@@ -1,4 +1,4 @@
-package br.com.marcelo.logistics.controller;
+package br.com.marcelo.logistics.api.controller;
 
 import java.util.List;
 
