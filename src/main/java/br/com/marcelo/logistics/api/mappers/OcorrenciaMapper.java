@@ -12,7 +12,7 @@ import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 @Component
-public class OcorrenicaMapper {
+public class OcorrenciaMapper {
 
 	private ModelMapper mapper;
 	
@@ -23,5 +23,4 @@ public class OcorrenicaMapper {
 	public List<OcorrenciaDto> toCollectionModel(List<Ocorrencia> ocorrencias) {
 		return ocorrencias.stream().map(this::toModel).collect(Collectors.toList());		
 	}
-	
 }

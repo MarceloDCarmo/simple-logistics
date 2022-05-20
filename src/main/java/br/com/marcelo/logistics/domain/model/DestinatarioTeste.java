@@ -1,17 +1,16 @@
-package br.com.marcelo.logistics.api.model;
+package br.com.marcelo.logistics.domain.model;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class DestinatarioDto {
-	
-	private String nome;
+public class DestinatarioTeste {
+
+	private String cep;
 	private String logradouro;
 	private String complemento;
 	private String bairro;
-	private String cep;
 	private String localidade;
 	private String uf;
 	private String ibge;

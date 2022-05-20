@@ -15,8 +15,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 import br.com.marcelo.logistics.domain.model.Cliente;
+import br.com.marcelo.logistics.domain.model.DestinatarioTeste;
 import br.com.marcelo.logistics.domain.repository.ClienteRepository;
 import br.com.marcelo.logistics.domain.service.CatalogoClienteService;
 import lombok.AllArgsConstructor;
@@ -26,8 +28,14 @@ import lombok.AllArgsConstructor;
 @RequestMapping("/clientes")
 public class ClienteController {
 	
+	private RestTemplate restTemplate;
 	private ClienteRepository repo;
 	private CatalogoClienteService service;
+	
+	@GetMapping("/teste/{cep}")
+	public DestinatarioTeste teste(@PathVariable String cep) {
+		return restTemplate.getForObject(String.format("https://viacep.com.br/ws/%s/json/", cep), DestinatarioTeste.class);
+	}
 	
 	@GetMapping
 	public List<Cliente> listar() {

@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.marcelo.logistics.api.mappers.OcorrenicaMapper;
+import br.com.marcelo.logistics.api.mappers.OcorrenciaMapper;
 import br.com.marcelo.logistics.api.model.OcorrenciaDto;
 import br.com.marcelo.logistics.api.model.input.OcorrenciaInputDto;
 import br.com.marcelo.logistics.domain.model.Entrega;
@@ -28,7 +28,7 @@ import lombok.AllArgsConstructor;
 public class OcorrenciaController {
 
 	private ResgistroOcorrenciaService regOcorrenciaService;
-	private OcorrenicaMapper ocorrenciaMapper;
+	private OcorrenciaMapper ocorrenciaMapper;
 	private BuscaEntregaService buscarEntregaService;
 	
 	@PostMapping
